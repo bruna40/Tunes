@@ -1,7 +1,11 @@
 import React from 'react';
+import Header from '../components/Header';
 
 const Profile = () => (
-  <div data-testid="page-profile" />
+  <>
+    <Header />
+    <div data-testid="page-profile" />
+  </>
 );
 
 export default Profile;

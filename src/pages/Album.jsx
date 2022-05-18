@@ -1,7 +1,11 @@
 import React from 'react';
+import Header from '../components/Header';
 
 const Album = () => (
-  <div data-testid="page-album" />
+  <>
+    <Header />
+    <div data-testid="page-album" />
+  </>
 );
 
 export default Album;
