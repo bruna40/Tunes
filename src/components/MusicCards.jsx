@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -13,9 +12,13 @@ const MusicCards = (props) => {
             <track kind="captions" />
             <code>audio</code>
           </audio>
-          <label>
+          <label htmlFor={ `checkbox-music-${trackId}` }>
             Favorita
-            <input type="checkbox" data-testid={ `checkbox-music-${trackId}` } />
+            <input
+              type="checkbox"
+              id="track-name"
+              data-testid={ `checkbox-music-${trackId}` }
+            />
           </label>
         </>
       )}
