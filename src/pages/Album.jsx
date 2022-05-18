@@ -15,7 +15,7 @@ const Album = () => {
 
   useEffect(() => {
     pegarMusicas();
-  }, []);
+  }, [id]);
 
   return (
     <>

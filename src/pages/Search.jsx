@@ -43,7 +43,7 @@ const Search = () => {
         <Loading />
       ) : (
         <>
-          <form>
+          <form data-testid="page-search">
             <input
               type="text"
               data-testid="search-artist-input"
