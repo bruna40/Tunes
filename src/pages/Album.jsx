@@ -2,23 +2,27 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import MusicCards from '../components/MusicCards';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import getMusics from '../services/musicsAPI';
 
 const Album = () => {
   const { id } = useParams();
 
   const [idMusica, setIdMusica] = useState([]);
+  const [musicasMarcadas, setMusicasMarcadas] = useState([]);
   const [existe, setExiste] = useState(false);
 
   const pegarMusicas = async () => {
+    setMusicasMarcadas(await getFavoriteSongs());
     const musica = await getMusics(id);
     setIdMusica(musica);
     setExiste(true);
   };
 
   useEffect(() => {
+    setIdMusica([]);
     pegarMusicas();
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -33,6 +37,8 @@ const Album = () => {
               trackName={ item.trackName }
               previewUrl={ item.previewUrl }
               trackId={ item.trackId }
+              marcados={ musicasMarcadas }
+              currSong={ { ...item } }
             />
           ))}
         </div>
