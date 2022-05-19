@@ -68,7 +68,7 @@ const Search = () => {
                 <Link
                   to={ `/album/${musica.collectionId}` }
                   data-testid={ `link-to-album-${musica.collectionId}` }
-                  key={ musica.artistId }
+                  key={ musica.collectionId }
                 >
                   <li>
                     <img

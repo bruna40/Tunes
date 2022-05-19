@@ -8,19 +8,22 @@ const Album = () => {
   const { id } = useParams();
 
   const [idMusica, setIdMusica] = useState([]);
+  const [existe, setExiste] = useState(false);
 
   const pegarMusicas = async () => {
-    setIdMusica(await getMusics(id));
+    const musica = await getMusics(id);
+    setIdMusica(musica);
+    setExiste(true);
   };
 
   useEffect(() => {
     pegarMusicas();
-  }, [pegarMusicas]);
+  }, []);
 
   return (
     <>
       <Header />
-      {idMusica.length !== 0 && (
+      {existe && (
         <div data-testid="page-album">
           <h1 data-testid="artist-name">{idMusica[0].artistName}</h1>
           <h2 data-testid="album-name">{idMusica[0].collectionName}</h2>
@@ -29,6 +32,7 @@ const Album = () => {
               key={ item.collectionId }
               trackName={ item.trackName }
               previewUrl={ item.previewUrl }
+              trackId={ item.trackId }
             />
           ))}
         </div>
