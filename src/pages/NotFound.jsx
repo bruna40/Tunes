@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 
 export default class NotFound extends Component {
@@ -7,3 +8,12 @@ export default class NotFound extends Component {
     );
   }
 }
+=======
+import React from 'react';
+
+const NotFound = () => (
+  <div data-testid="page-not-found" />
+);
+
+export default NotFound;
+>>>>>>> lucas-ferreira-pinto-a-project-trybetunes
