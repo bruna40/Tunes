@@ -1,9 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Carregando extends Component {
-  render() {
-    return (
-      <div>Carregando...</div>
-    );
-  }
-}
+const Loading = () => <h1>Carregando...</h1>;
+
+export default Loading;
