@@ -7,4 +7,13 @@ export const AlbumContainer = styled.main`
 
     gap: 2rem;
 
+    
 `;
+
+export const ContainerAlbum = styled.div`
+
+    div:first-child {
+        margin-top: 1rem;
+        
+    }
+`

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { addSong, removeSong } from '../../services/favoriteSongsAPI.js';
 import PropTypes from 'prop-types';
 import { MusicCard, MusicTitle, MusicAudio, MusicCheckbox } from './style.js';
-import { SkeletonHeader } from '../Header/SkeletonHeader.jsx';
 
 export function MusicCards({ trackName, previewUrl, trackId, currSong }) {
 
@@ -33,9 +32,7 @@ export function MusicCards({ trackName, previewUrl, trackId, currSong }) {
             <track kind="captions" />
             <code>audio</code>
           </MusicAudio>
-          { favSongs.length === 0 ? (
-            <SkeletonHeader />
-          ) : (
+          { favSongs && (
             <MusicCheckbox
               type="checkbox"
               data-testid={ `checkbox-music-${trackId}` }
